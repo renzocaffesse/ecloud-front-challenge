@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
 import {
   ChakraProvider,
   createSystem,
   defaultConfig,
   defineConfig,
-} from '@chakra-ui/react'
-import type { ReactNode } from 'react'
+} from "@chakra-ui/react";
+import type { ReactNode } from "react";
 
 type ProvidersProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const config = defineConfig({
   theme: {
@@ -23,13 +23,19 @@ const config = defineConfig({
       spacing: {},
       radii: {},
     },
+    breakpoints: {
+      sm: "480px",
+      md: "768px",
+      lg: "992px",
+      xl: "1280",
+    },
   },
-})
+});
 
-const system = createSystem(defaultConfig, config)
+const system = createSystem(defaultConfig, config);
 
 const Providers = ({ children }: ProvidersProps) => (
   <ChakraProvider value={system}>{children}</ChakraProvider>
-)
+);
 
-export default Providers
+export default Providers;
