@@ -58,7 +58,7 @@ const NavDesktopClient = () => {
         {/* Links principales del nav */}
         <Flex
           as="nav"
-          gap={8}
+          gap={{ base: 6, lg: 8 }}
           align="center"
           color="rgba(43, 43, 43, 1)"
           fontWeight="400"

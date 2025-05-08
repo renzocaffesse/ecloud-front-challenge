@@ -145,11 +145,13 @@ const HeroSlider = ({ slides }: HeroSliderProps) => {
       {/* Paginador con número, título y barra animada */}
       <Box
         position="absolute"
-        bottom={{ base: '28', md: '32', lg: '36', xl: '40' }}
-        left={{ base: '6', md: '10', lg: '14', xl: '20' }}
+        bottom={{ base: '24', md: '32', lg: '36', xl: '40' }}
+        left={0}
+        right={0}
+        px={{ base: 6, lg: 20 }}
         zIndex={20}
       >
-        <Box display="flex" gap="14">
+        <Box display="flex" gap={{ base: '12', md: '16', lg: '20', xl: '24' }}>
           {slides.map((slide, i) => (
             <Box
               key={i}
@@ -187,6 +189,7 @@ const HeroSlider = ({ slides }: HeroSliderProps) => {
           ))}
         </Box>
       </Box>
+
     </Box>
   );
 };
