@@ -1,26 +1,38 @@
 import { Box, Text } from "@chakra-ui/react";
-import HeroSlider from "./HeroSlider";
-import { getHeroSlides } from "@/server/getHeroSlides";
+import HeroSlider from "./HeroSlider.client";
+import { Slide } from "@/types/slide";
 
-const Hero = async () => {
-  // SSR: slides del servidor en tiempo de render
-  const slides = await getHeroSlides();
+type HeroSectionProps = {
+  slides: Slide[];
+};
 
+const HeroSection = ({ slides }: HeroSectionProps) => {
   return (
     <Box
       as="section"
       aria-label="Hero principal"
       position="relative"
       minHeight="100vh"
+      overflow="hidden"
     >
-      {/* Título principal del Hero */}
+      {/* Slider de fondo */}
+      <HeroSlider slides={slides} />
+
+      {/* Título posicionado encima del slider con zIndex 1 y sin interacciones */}
+      {/* Se posiciona encima del slider pero sin bloquear eventos (como los clics del slider)*/}
       <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
         px={{ base: 6, md: 10, lg: 14, xl: 20 }}
         py={{ base: 6, md: 8, lg: 10, xl: 12 }}
         display="flex"
         flexDirection="column"
         justifyContent={{ base: "flex-end", md: "center" }}
-        minHeight="100vh"
+        zIndex={1}
+        pointerEvents="none"
       >
         <Text
           color="white"
@@ -28,7 +40,6 @@ const Hero = async () => {
           fontWeight="900"
           lineHeight={{ base: "68px", md: "80px", lg: "95px", xl: "110px" }}
           letterSpacing="0"
-          fontFamily="'canada-type-gibson', sans-serif"
           mb={{ base: "52", md: 0 }}
         >
           Tu tribu
@@ -36,11 +47,8 @@ const Hero = async () => {
           te espera
         </Text>
       </Box>
-
-      {/* Client Component con lógica interactiva (autoplay + click) */}
-      <HeroSlider slides={slides} />
     </Box>
   );
 };
 
-export default Hero;
+export default HeroSection;
