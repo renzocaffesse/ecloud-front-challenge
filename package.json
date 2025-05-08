@@ -10,20 +10,24 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@chakra-ui/accordion": "^2.3.1",
     "@chakra-ui/next-js": "^2.4.2",
-    "@chakra-ui/react": "^3.16.1",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "framer-motion": "^12.9.2",
+    "@chakra-ui/react": "^3.17.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^10.12.16",
+    "lucide-react": "^0.507.0",
     "next": "15.3.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "prettier": "^3.5.3",
