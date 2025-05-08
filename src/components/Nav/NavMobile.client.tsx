@@ -211,8 +211,8 @@ const NavMobileClient = () => {
       left={0}
       right={0}
       zIndex={30}
-      px={4}
-      py={2}
+      px={6}
+      py={12}
       bg="transparent"
     >
       <Flex justify="space-between" align="center" height="64px">
@@ -250,7 +250,7 @@ const NavMobileClient = () => {
             alignItems="center"
             justifyContent="center"
             gap="1.5"
-            px="4"
+            px="2"
             height="44px"
             borderRadius="8px"
             bg="white"
