@@ -236,6 +236,7 @@ const NavMobileClient = ({ onOpenDrawer }: Props) => {
             borderRadius="8px"
             width="103px"
             height="44px"
+            boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
           >
             <Image
               src="/img/logo-nomad.svg"
@@ -271,6 +272,7 @@ const NavMobileClient = ({ onOpenDrawer }: Props) => {
               textDecoration: 'none',
             }}
             _focus={{ outline: 'none', boxShadow: 'none' }}
+            boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
           >
             <Box h="20px">
               <Calendar height="20px" />
@@ -291,6 +293,7 @@ const NavMobileClient = ({ onOpenDrawer }: Props) => {
             display="flex"
             alignItems="center"
             justifyContent="center"
+            boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
           >
             <Box w="24px" h="24px">
               <MenuIcon width="100%" height="100%" />

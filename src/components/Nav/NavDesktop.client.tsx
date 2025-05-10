@@ -38,6 +38,7 @@ const NavDesktopClient = ({ onOpenDrawer }: Props) => {
           borderRadius={{ md: '16px' }}
           width={{ md: '142.67px' }}
           height={{ md: '64px' }}
+          boxShadow="0px 12px 32px rgba(0, 0, 0, 0.25)"
         >
           <Image
             src="/img/logo-nomad.svg"
@@ -57,6 +58,7 @@ const NavDesktopClient = ({ onOpenDrawer }: Props) => {
         py={3}
         height="64px"
         gap={8}
+        boxShadow="0px 12px 32px rgba(0, 0, 0, 0.25)"
       >
         {/* Links principales del nav */}
         <Flex
