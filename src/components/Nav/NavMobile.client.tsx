@@ -19,7 +19,11 @@ import MenuIcon from '@/assets/icons/menu.svg';
 import { useState } from 'react';
 import NextLink from 'next/link';
 
-const NavMobileClient = () => {
+type Props = {
+  onOpenDrawer: () => void;
+};
+
+const NavMobileClient = ({ onOpenDrawer }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   if (menuOpen) {
@@ -79,7 +83,7 @@ const NavMobileClient = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <X size={24} />
+            <X />
           </Button>
         </Flex>
 
@@ -169,6 +173,7 @@ const NavMobileClient = () => {
 
           <Box pt={4}>
             <ChakraLink
+              onClick={onOpenDrawer}
               as={NextLink}
               href="#"
               width="100%"
@@ -244,6 +249,7 @@ const NavMobileClient = () => {
 
         <Flex align="center" gap={2}>
           <ChakraLink
+            onClick={onOpenDrawer}
             as={NextLink}
             href="#"
             display="inline-flex"

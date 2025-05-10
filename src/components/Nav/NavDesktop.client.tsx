@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -11,7 +10,11 @@ import { Calendar } from 'lucide-react';
 import NextLink from 'next/link';
 import ExperimentaDropdown from './ExperimentaDropdown.client';
 
-const NavDesktopClient = () => {
+type Props = {
+  onOpenDrawer: () => void;
+};
+
+const NavDesktopClient = ({ onOpenDrawer }: Props) => {
   return (
     <Flex
       as="nav"
@@ -113,6 +116,7 @@ const NavDesktopClient = () => {
           lineHeight="24px"
           letterSpacing="0.04em"
           backdropFilter="blur(20px)"
+          onClick={onOpenDrawer}
           _hover={{
             bg: 'rgba(41, 79, 139, 1)',
             textDecoration: 'none',
