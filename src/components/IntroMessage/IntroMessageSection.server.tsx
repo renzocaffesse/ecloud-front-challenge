@@ -7,7 +7,7 @@ const IntroMessageSection = () => {
       width="100%"
       bg="white"
       py={{ base: 16, md: 24 }}
-      px={{ base: 6, md: 0 }}
+      px={{ base: 4, md: 0 }}
       textAlign="center"
       minH="100vh"
       display="flex"
@@ -20,7 +20,7 @@ const IntroMessageSection = () => {
         lineHeight={{ base: '56px', md: '98px' }}
         letterSpacing={{ base: '-0.02em', md: '-0.04em' }}
         color="rgba(43, 43, 43, 1)"
-        px={{ base: 4, md: 0 }}
+        px={0}
         textAlign="center"
       >
         Un hogar con espacio para coworkear, <br />
