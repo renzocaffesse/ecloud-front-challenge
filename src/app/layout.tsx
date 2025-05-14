@@ -1,4 +1,4 @@
-import Providers from "@/chakra-provider";
+import Providers from "@/components/ui/provider";
 import type { ReactNode } from "react";
 
 export const metadata = {
