@@ -1,1 +1,1 @@
-export { default } from "./NavWrapper.server";
+export { default } from "./NavWrapper.client";

@@ -11,7 +11,7 @@ const HotelsSectionWrapper = () => {
       display="flex"
       justifyContent={{ base: "center", md: "flex-start" }}
       bg="white"
-      py={{ base: 16, md: 24 }}
+      py={20}
     >
       <Box
         bg="rgba(244, 244, 244, 1)"

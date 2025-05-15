@@ -21,10 +21,21 @@ import NextLink from 'next/link';
 
 type Props = {
   onOpenDrawer: () => void;
+  setMenuOpen: (open: boolean) => void;
 };
 
-const NavMobileClient = ({ onOpenDrawer }: Props) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
+  const [menuOpen, _setMenuOpen] = useState(false);
+
+  const handleOpen = () => {
+    _setMenuOpen(true);
+    setMenuOpen(true);
+  };
+
+  const handleClose = () => {
+    _setMenuOpen(false);
+    setMenuOpen(false);
+  };
 
   if (menuOpen) {
     {/* Menú completo cuando está abierto (ocupa toda la pantalla) */}
@@ -71,7 +82,7 @@ const NavMobileClient = ({ onOpenDrawer }: Props) => {
 
           <Button
             aria-label="Cerrar menú"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleClose}
             variant="ghost"
             p="0"
             minW="unset"
@@ -282,7 +293,7 @@ const NavMobileClient = ({ onOpenDrawer }: Props) => {
 
           <Button
             aria-label="Abrir menú"
-            onClick={() => setMenuOpen(true)}
+            onClick={handleOpen}
             variant="ghost"
             p="0"
             minW="unset"

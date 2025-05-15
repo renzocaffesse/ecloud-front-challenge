@@ -5,25 +5,30 @@ import NavDesktopClient from './NavDesktop.client';
 import NavMobileClient from './NavMobile.client';
 import { useState } from 'react';
 import ReservaDrawer from '../ReservaDrawer/ReservaDrawer.client';
+import NavWrapper from './NavWrapper.client';
 
-// Decide qué versión del nav mostrar (mobile o desktop)
+// Componente que controla el layout del Nav completo
 const NavOrchestrator = () => {
-  const isDesktop = useBreakpointValue({ base: false, md: true });
+  const isDesktop = useBreakpointValue({ base: false, md: true }) ?? false;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
+    <NavWrapper isDesktop={isDesktop} isMenuOpen={isMenuOpen}>
       {isDesktop ? (
         <NavDesktopClient onOpenDrawer={() => setIsDrawerOpen(true)} />
       ) : (
-        <NavMobileClient onOpenDrawer={() => setIsDrawerOpen(true)} />
+        <NavMobileClient
+          onOpenDrawer={() => setIsDrawerOpen(true)}
+          setMenuOpen={setIsMenuOpen}
+        />
       )}
-      {/* Drawer de reservas que se muestra desde ambos layouts */}
+
       <ReservaDrawer
         open={isDrawerOpen}
         onOpenChange={(details) => setIsDrawerOpen(details.open)}
       />
-    </>
+    </NavWrapper>
   );
 };
 
