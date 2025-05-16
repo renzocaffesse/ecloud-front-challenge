@@ -28,6 +28,7 @@ const HeroSection = ({ slides }: HeroSectionProps) => {
         bottom={0}
         px={{ base: 6, lg: 20 }}
         py={{ base: 6, md: 8, lg: 10, xl: 12 }}
+        pb={{ base: '140px', md: '200px', lg: '220px', xl: '240px' }}
         display="flex"
         flexDirection="column"
         justifyContent={{ base: "flex-end", md: "center" }}
