@@ -103,6 +103,7 @@ const HeroSlider = ({ slides }: HeroSliderProps) => {
 
       {/* Flechas de navegación */}
       <Button
+        display={{ base: 'none', md: 'flex' }}
         aria-label="Slide anterior"
         onClick={handlePrev}
         position="absolute"
@@ -123,6 +124,7 @@ const HeroSlider = ({ slides }: HeroSliderProps) => {
       </Button>
 
       <Button
+        display={{ base: 'none', md: 'flex' }}
         aria-label="Slide siguiente"
         onClick={handleNext}
         position="absolute"
