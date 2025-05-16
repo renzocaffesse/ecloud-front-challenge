@@ -11,8 +11,8 @@ type Props = {
 };
 
 const NavWrapper = ({ children, isDesktop, isMenuOpen }: Props) => {
-  const scrollDir = useScrollDirection();
-  const shouldHideNav = scrollDir === 'down' && !isMenuOpen;
+  const { direction: scrollDir, scrollY } = useScrollDirection();
+  const shouldHideNav = scrollDir === 'down' && scrollY > 128 && !isMenuOpen;
 
   // En mobile necesito empujarlo más para que desaparezca del todo
   const transform = shouldHideNav
