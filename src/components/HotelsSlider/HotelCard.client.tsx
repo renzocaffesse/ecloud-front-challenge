@@ -68,16 +68,12 @@ const HotelCard = ({
         borderRadius={{ base: '12px', md: '16px' }}
         width={{ base: '295px', md: isHovered ? '368px' : '356px' }}
         height={{ base: '108px', md: isHovered ? '295px' : '134px' }}
-        bg={color}
+        bg={showFullInfo ? color.replace(', 1)', ', 0.8)') : color}
         color="white"
         boxShadow="0px 12px 32px rgba(0, 0, 0, 0.25)"
         zIndex={3}
         transition="all 0.3s ease"
         overflow="hidden"
-        style={{
-          backdropFilter: showFullInfo ? 'blur(20px)' : 'none',
-          WebkitBackdropFilter: showFullInfo ? 'blur(20px)' : 'none',
-        }}
       >
         <Flex align="center" gap={2} mb={{ base: 1, md: 2 }}>
           <Box w="16px" h="16px">

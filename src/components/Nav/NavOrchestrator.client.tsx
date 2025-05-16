@@ -1,8 +1,8 @@
 'use client';
 
 import { useBreakpointValue } from '@chakra-ui/react';
-import NavDesktopClient from './NavDesktop.client';
-import NavMobileClient from './NavMobile.client';
+import NavDesktop from './NavDesktop.client';
+import NavMobile from './NavMobile.client';
 import { useState } from 'react';
 import ReservaDrawer from '../ReservaDrawer/ReservaDrawer.client';
 import NavWrapper from './NavWrapper.client';
@@ -16,9 +16,9 @@ const NavOrchestrator = () => {
   return (
     <NavWrapper isDesktop={isDesktop} isMenuOpen={isMenuOpen}>
       {isDesktop ? (
-        <NavDesktopClient onOpenDrawer={() => setIsDrawerOpen(true)} />
+        <NavDesktop onOpenDrawer={() => setIsDrawerOpen(true)} />
       ) : (
-        <NavMobileClient
+        <NavMobile
           onOpenDrawer={() => setIsDrawerOpen(true)}
           setMenuOpen={setIsMenuOpen}
         />
