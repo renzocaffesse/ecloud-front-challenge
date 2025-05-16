@@ -2,7 +2,6 @@
 
 import {
   DrawerRoot,
-  DrawerBackdrop,
   DrawerContent,
   DrawerTitle,
   Box,
@@ -21,7 +20,6 @@ type Props = {
 const ReservaDrawer = ({ open, onOpenChange }: Props) => {
   return (
     <DrawerRoot open={open} onOpenChange={onOpenChange} placement="end">
-      <DrawerBackdrop />
       <DrawerContent
         maxWidth={{ base: '100%', md: '708px' }}
         bg="white"
@@ -29,7 +27,7 @@ const ReservaDrawer = ({ open, onOpenChange }: Props) => {
         py={{ base: "54px", md: 8 }}
         overflowY="auto"
         position="fixed"
-        top={{ base: 0, md: 8, lg: 32 }}
+        top={{ base: 0, md: 8, lg: 40 }}
         right={{ base: 0, md: 8, lg: 24 }}
         boxShadow="0px 18px 32px rgba(0, 0, 0, 0.1)"
       >
