@@ -101,7 +101,6 @@ const NavDesktopClient = ({ onOpenDrawer }: Props) => {
           height="48px"
           width="100%"
           borderRadius="8px"
-          variant="primary"
           onClick={onOpenDrawer}
           _focus={{ outline: "none", boxShadow: "none" }}
         >
