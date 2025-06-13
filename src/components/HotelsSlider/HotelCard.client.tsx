@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Box, Image, Flex, useBreakpointValue } from '@chakra-ui/react';
-import { HotelCardProps } from '@/types/hotel';
-import { useState } from 'react';
+import { Box, Image, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { HotelCardProps } from "@/types/hotel";
+import { useState } from "react";
 
-import PinIcon from '@/assets/icons/pin.svg';
-import BedIcon from '@/assets/icons/bed.svg';
-import GastroIcon from '@/assets/icons/gastro.svg';
-import ActivitiesIcon from '@/assets/icons/activities.svg';
+import PinIcon from "@/assets/icons/pin.svg";
+import BedIcon from "@/assets/icons/bed.svg";
+import GastroIcon from "@/assets/icons/gastro.svg";
+import ActivitiesIcon from "@/assets/icons/activities.svg";
 
 const amenitiesMap = {
   bed: BedIcon,
@@ -35,10 +35,10 @@ const HotelCard = ({
     <Box
       role="group"
       position="relative"
-      width={{ base: '100%', md: '50vw' }}
-      maxW={{ base: '327px', md: 'none' }}
+      width={{ base: "100%", md: "50vw" }}
+      maxW={{ base: "327px", md: "none" }}
       overflow="visible"
-      cursor={isMobile ? 'default' : 'pointer'}
+      cursor={isMobile ? "default" : "pointer"}
       onMouseEnter={() => !isMobile && setIsHovered(true)}
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
@@ -60,15 +60,15 @@ const HotelCard = ({
         direction="column"
         justify="space-between"
         position="absolute"
-        bottom={{ base: '24px', md: '48px' }}
-        left={{ base: '16px', md: 'auto' }}
-        right={{ base: 'auto', md: '-48px' }}
-        px={{ base: '16px', md: '24px' }}
-        py={{ base: '16px', md: '24px' }}
-        borderRadius={{ base: '12px', md: '16px' }}
-        width={{ base: '295px', md: isHovered ? '368px' : '356px' }}
-        height={{ base: '108px', md: isHovered ? '295px' : '134px' }}
-        bg={showFullInfo ? color.replace(', 1)', ', 0.8)') : color}
+        bottom={{ base: "24px", md: "48px" }}
+        left={{ base: "16px", md: "auto" }}
+        right={{ base: "auto", md: "-48px" }}
+        px={{ base: "16px", md: "24px" }}
+        py={{ base: "16px", md: "24px" }}
+        borderRadius={{ base: "12px", md: "16px" }}
+        width={{ base: "295px", md: isHovered ? "368px" : "356px" }}
+        height={{ base: "108px", md: isHovered ? "295px" : "134px" }}
+        bg={showFullInfo ? color.replace(", 1)", ", 0.8)") : color}
         color="white"
         boxShadow="0px 12px 32px rgba(0, 0, 0, 0.25)"
         zIndex={3}
@@ -102,7 +102,7 @@ const HotelCard = ({
 
             <Box
               height="2px"
-              width="100px"
+              width="160px"
               bg="rgba(177, 255, 168, 0.5)"
               borderRadius="full"
               mb={3}

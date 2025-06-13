@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Box,
@@ -7,24 +7,24 @@ import {
   Image,
   Link as ChakraLink,
   VStack,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-} from '@chakra-ui/accordion';
-import { Calendar, X, Minus, Plus } from 'lucide-react';
-import MenuIcon from '@/assets/icons/menu.svg';
-import { useState } from 'react';
-import NextLink from 'next/link';
+} from "@chakra-ui/accordion";
+import { Calendar, X, Minus, Plus } from "lucide-react";
+import MenuIcon from "@/assets/icons/menu.svg";
+import { useState } from "react";
+import NextLink from "next/link";
 
 type Props = {
   onOpenDrawer: () => void;
   setMenuOpen: (open: boolean) => void;
 };
 
-const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
+const NavMobileClient = ({ onOpenDrawer, setMenuOpen }: Props) => {
   const [menuOpen, _setMenuOpen] = useState(false);
 
   const handleOpen = () => {
@@ -38,7 +38,9 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
   };
 
   if (menuOpen) {
-    {/* Menú completo cuando está abierto (ocupa toda la pantalla) */}
+    {
+      /* Menú completo cuando está abierto (ocupa toda la pantalla) */
+    }
     return (
       <Box
         as="header"
@@ -58,7 +60,7 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
             as={NextLink}
             href="/"
             display="inline-block"
-            _focus={{ outline: 'none', boxShadow: 'none' }}
+            _focus={{ outline: "none", boxShadow: "none" }}
           >
             <Box
               bg="white"
@@ -100,7 +102,7 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
 
         {/* Contenido del menú con botón fijo abajo */}
         <Flex direction="column" height="100%" px={2} py={9}>
-          <Box flex="1">
+          <Box flex="1" overflowY="auto">
             <VStack align="stretch" gap={4}>
               <ChakraLink
                 as={NextLink}
@@ -112,8 +114,8 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
                 color="rgba(43, 43, 43, 1)"
                 borderBottom="1px solid #E2E8F0"
                 pb={4}
-                _hover={{ textDecoration: 'none', color: 'blue.600' }}
-                _focus={{ outline: 'none', boxShadow: 'none' }}
+                _hover={{ textDecoration: "none", color: "blue.600" }}
+                _focus={{ outline: "none", boxShadow: "none" }}
               >
                 Alójate
               </ChakraLink>
@@ -128,8 +130,8 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
                 color="rgba(43, 43, 43, 1)"
                 borderBottom="1px solid #E2E8F0"
                 pb={4}
-                _hover={{ textDecoration: 'none', color: 'blue.600' }}
-                _focus={{ outline: 'none', boxShadow: 'none' }}
+                _hover={{ textDecoration: "none", color: "blue.600" }}
+                _focus={{ outline: "none", boxShadow: "none" }}
               >
                 Co-Work
               </ChakraLink>
@@ -147,17 +149,28 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
                         letterSpacing="-0.02em"
                         color="rgba(43, 43, 43, 1)"
                         pb={16}
-                        _hover={{ bg: 'transparent', color: 'blue.600' }}
+                        _hover={{ bg: "transparent", color: "blue.600" }}
                       >
                         <Box as="span" flex="1" textAlign="left">
                           Experimenta
                         </Box>
-                        <Box>{isExpanded ? <Minus size={24} /> : <Plus size={24} />}</Box>
+                        <Box>
+                          {isExpanded ? (
+                            <Minus size={24} />
+                          ) : (
+                            <Plus size={24} />
+                          )}
+                        </Box>
                       </AccordionButton>
 
                       <AccordionPanel pl={16} pt={16}>
                         <VStack align="stretch" gap={4}>
-                          {['City Host', 'Actividades', 'Gastronomía', 'Eventos'].map((label) => (
+                          {[
+                            "City Host",
+                            "Actividades",
+                            "Gastronomía",
+                            "Eventos",
+                          ].map((label) => (
                             <ChakraLink
                               key={label}
                               href="#"
@@ -167,8 +180,11 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
                               letterSpacing="-0.02em"
                               color="rgba(43, 43, 43, 1)"
                               pb={4}
-                              _hover={{ textDecoration: 'none', color: 'blue.600' }}
-                              _focus={{ outline: 'none', boxShadow: 'none' }}
+                              _hover={{
+                                textDecoration: "none",
+                                color: "blue.600",
+                              }}
+                              _focus={{ outline: "none", boxShadow: "none" }}
                             >
                               {label}
                             </ChakraLink>
@@ -195,17 +211,8 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
               px="4"
               height="64px"
               borderRadius="8px"
-              bg="rgba(41, 79, 139, 1)"
-              color="white"
-              fontWeight={600}
-              fontSize="15px"
-              lineHeight="24px"
-              letterSpacing="0.04em"
-              _hover={{
-                bg: 'rgba(30, 65, 120, 1)',
-                textDecoration: 'none',
-              }}
-              _focus={{ outline: 'none', boxShadow: 'none' }}
+              variant="primary"
+              _focus={{ outline: "none", boxShadow: "none" }}
             >
               <Box h="20px">
                 <Calendar height="20px" color="white" />
@@ -236,7 +243,7 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
           as={NextLink}
           href="/"
           display="inline-block"
-          _focus={{ outline: 'none', boxShadow: 'none' }}
+          _focus={{ outline: "none", boxShadow: "none" }}
         >
           <Box
             bg="white"
@@ -271,19 +278,9 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen  }: Props) => {
             px="2"
             height="44px"
             borderRadius="8px"
-            bg="white"
-            color="rgba(61, 99, 169, 1)"
-            fontWeight={600}
-            fontSize="15px"
-            lineHeight="24px"
-            letterSpacing="0.04em"
-            backdropFilter="blur(20px)"
-            _hover={{
-              bg: 'gray.100',
-              textDecoration: 'none',
-            }}
-            _focus={{ outline: 'none', boxShadow: 'none' }}
+            variant="primary"
             boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
+            _focus={{ outline: "none", boxShadow: "none" }}
           >
             <Box h="20px">
               <Calendar height="20px" />

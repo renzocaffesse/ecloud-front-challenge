@@ -4,6 +4,13 @@ import type { ReactNode } from "react";
 export const metadata = {
   title: "Ecloud Front Challenge",
   description: "Nomad Hotels homepage",
+  keywords: ["hoteles", "nomad", "peru"],
+  openGraph: {
+    title: "Nomad",
+    description: "Hoteles para nómadas digitales",
+    url: "https://example.com",
+    siteName: "Nomad",
+  },
 };
 
 type RootLayoutProps = {

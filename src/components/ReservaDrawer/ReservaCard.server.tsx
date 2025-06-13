@@ -1,5 +1,5 @@
-import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react';
-import { Reserva } from '@/types/reserva';
+import { Box, Button, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { Reserva } from "@/types/reserva";
 
 type ReservaCardProps = {
   reserva: Reserva;
@@ -11,8 +11,8 @@ const ReservaCard = ({ reserva, isLast }: ReservaCardProps) => {
     <Flex
       maxW="628px"
       gap={{ base: 8, md: 6 }}
-      direction={{ base: 'column', md: 'row' }}
-      borderBottom={isLast ? 'none' : '1px solid'} // Elimina el borde en la última card
+      direction={{ base: "column", md: "row" }}
+      borderBottom={isLast ? "none" : "1px solid"} // Elimina el borde en la última card
       borderColor="gray.200"
       pb={{ base: 8 }}
     >
@@ -23,13 +23,18 @@ const ReservaCard = ({ reserva, isLast }: ReservaCardProps) => {
           alt={reserva.title}
           borderRadius="8px"
           objectFit="cover"
-          width={{ base: '100%', md: '250px' }}
-          height={{ base: '200px', md: '262px' }}
+          width={{ base: "100%", md: "250px" }}
+          height={{ base: "200px", md: "262px" }}
         />
       </Box>
 
       {/* Contenido textual */}
-      <VStack align="start" gap={{ base: 6, md: 4 }} flex={1} justifyContent="space-around">
+      <VStack
+        align="start"
+        gap={{ base: 6, md: 4 }}
+        flex={1}
+        justifyContent="space-around"
+      >
         {/* Título como imagen si está disponible */}
         <Box>
           {reserva.titleImg ? (
@@ -65,7 +70,7 @@ const ReservaCard = ({ reserva, isLast }: ReservaCardProps) => {
           letterSpacing="0.03em"
           color="rgba(103, 103, 103, 1)"
         >
-          {reserva.amenities.join(' · ')}
+          {reserva.amenities.join(" · ")}
         </Text>
 
         {/* Precio + botón de acción */}
@@ -77,27 +82,25 @@ const ReservaCard = ({ reserva, isLast }: ReservaCardProps) => {
             letterSpacing="0.04em"
             color="rgba(43, 43, 43, 1)"
           >
-            Desde{' '}
+            Desde{" "}
             <Box
               as="span"
               fontWeight={900}
               letterSpacing="0.04em"
               lineHeight="24px"
             >
-              ${reserva.price.toLocaleString('es-AR')}/Noche
+              ${reserva.price.toLocaleString("es-AR")}/Noche
             </Box>
           </Text>
 
           <Button
-            width={{ base: '100%', md: 'auto' }} // Full width solo en mobile
-            bg="rgba(61, 99, 169, 1)"
-            color="white"
+            width={{ base: "100%", md: "auto" }} // Full width solo en mobile
+            variant="primary"
             size="md"
             h="48px"
             px="12px"
             borderRadius="8px"
             fontWeight="semibold"
-            _hover={{ bg: 'rgba(50, 81, 140, 1)' }}
           >
             Reservar Ahora
           </Button>

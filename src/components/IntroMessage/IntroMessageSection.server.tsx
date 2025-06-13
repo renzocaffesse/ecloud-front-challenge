@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text } from "@chakra-ui/react";
 
 const IntroMessageSection = () => {
   return (
@@ -16,18 +16,18 @@ const IntroMessageSection = () => {
     >
       <Text
         fontWeight={300}
-        fontSize={{ base: '40px', md: '72px' }}
-        lineHeight={{ base: '56px', md: '98px' }}
-        letterSpacing={{ base: '-0.02em', md: '-0.04em' }}
+        fontSize={{ base: "40px", md: "72px" }}
+        lineHeight={{ base: "56px", md: "98px" }}
+        letterSpacing={{ base: "-0.02em", md: "-0.04em" }}
         color="rgba(43, 43, 43, 1)"
         px={0}
         textAlign="center"
       >
         Un hogar con espacio para coworkear, <br />
-        conectarte con{' '}
+        conectarte con{" "}
         <Box
           as="span"
-          bg="rgba(61, 99, 169, 1)"
+          bg="brand.blue"
           px={{ base: 3, md: 2 }}
           py={{ base: 1, md: 0.5 }}
           color="white"
@@ -37,9 +37,8 @@ const IntroMessageSection = () => {
           lineHeight="inherit"
         >
           aventuras locales
-        </Box>{' '}
-        <br />
-        y personas increíbles.
+        </Box>{" "}
+        <br />y personas increíbles.
       </Text>
     </Box>
   );

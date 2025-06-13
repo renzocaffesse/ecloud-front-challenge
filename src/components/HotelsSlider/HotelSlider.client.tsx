@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import { Box, useBreakpointValue } from '@chakra-ui/react';
-import HotelCard from './HotelCard.client';
-import { mockHoteles } from '@/data/mockHoteles';
+import { useEffect, useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
+import HotelCard from "./HotelCard.client";
+import { mockHoteles } from "@/data/mockHoteles";
 
 const AUTOPLAY_INTERVAL = 4000;
 
@@ -12,7 +12,7 @@ const AUTOPLAY_INTERVAL = 4000;
 const HotelsSlider = () => {
   const isMobile = useBreakpointValue({ base: true, md: false }) ?? false;
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
+    align: "start",
     loop: false,
     containScroll: false,
     skipSnaps: false,
@@ -39,9 +39,9 @@ const HotelsSlider = () => {
     };
 
     autoplay();
-    emblaApi.on('reInit', autoplay);
-    emblaApi.on('pointerDown', () => clearInterval(autoplayRef.current!));
-    emblaApi.on('pointerUp', autoplay);
+    emblaApi.on("reInit", autoplay);
+    emblaApi.on("pointerDown", () => clearInterval(autoplayRef.current!));
+    emblaApi.on("pointerUp", autoplay);
 
     return () => clearInterval(autoplayRef.current!);
   }, [emblaApi]);
@@ -49,17 +49,11 @@ const HotelsSlider = () => {
   if (isMobile) return null;
 
   return (
-    <Box
-      ref={emblaRef}
-      w="100vw"
-      overflowX="hidden"
-      position="relative"
-    >
+    <Box ref={emblaRef} w="100vw" overflowX="hidden" position="relative">
       <Box
         className="embla__container"
         display="flex"
         gap="132px"
-        pl="132px"
         pr="84px"
         scrollSnapType="x mandatory"
         maxW="100vw"

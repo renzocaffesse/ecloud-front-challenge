@@ -1,12 +1,7 @@
-'use client';
+"use client";
 
-import {
-  Box,
-  Button,
-  Flex,
-  Link as ChakraLink,
-} from '@chakra-ui/react';
-import { useEffect, useRef, useState } from 'react';
+import { Box, Button, Flex, Link as ChakraLink } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 
 const ExperimentaDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +20,8 @@ const ExperimentaDropdown = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Hover solo abre si no está bloqueado
@@ -55,12 +50,13 @@ const ExperimentaDropdown = () => {
       ref={containerRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      display="inline-block"
     >
       <Button
         variant="ghost"
         fontWeight="medium"
         fontSize="15px"
-        _hover={{ color: 'blue.600', bg: 'transparent' }}
+        _hover={{ color: "blue.600", bg: "transparent" }}
         onClick={handleClick}
       >
         Experimenta
@@ -70,8 +66,7 @@ const ExperimentaDropdown = () => {
       {isOpen && (
         <Box
           position="absolute"
-          top="100%"
-          mt={8}
+          top="calc(100% + 8px)"
           left="50%"
           transform="translateX(-50%)"
           bg="white"
