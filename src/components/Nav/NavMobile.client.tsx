@@ -211,7 +211,6 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen }: Props) => {
               px="4"
               height="64px"
               borderRadius="8px"
-              variant="primary"
               _focus={{ outline: "none", boxShadow: "none" }}
             >
               <Box h="20px">
@@ -278,7 +277,6 @@ const NavMobileClient = ({ onOpenDrawer, setMenuOpen }: Props) => {
             px="2"
             height="44px"
             borderRadius="8px"
-            variant="primary"
             boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
             _focus={{ outline: "none", boxShadow: "none" }}
           >
