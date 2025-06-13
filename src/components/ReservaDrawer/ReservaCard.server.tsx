@@ -95,7 +95,6 @@ const ReservaCard = ({ reserva, isLast }: ReservaCardProps) => {
 
           <Button
             width={{ base: "100%", md: "auto" }} // Full width solo en mobile
-            variant="primary"
             size="md"
             h="48px"
             px="12px"
